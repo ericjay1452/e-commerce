@@ -4,3 +4,6 @@
 
 @import '~antd/dist/antd.css';
 
+*, *::before, *::after {
+    overflow-x: hidden !important;
+}
