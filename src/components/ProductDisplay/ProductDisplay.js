@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'antd'
-import {BsBookmark} from "react-icons/bs"
+import {BsBookmark, BsBagCheckFill} from "react-icons/bs"
 const ProductDisplay = (props) => {
     const {image, name, price, price_usd,
         special_price,
@@ -10,7 +9,7 @@ const ProductDisplay = (props) => {
         product_url,
         plpimaage
     } = props
-    console.log({props})
+    // console.log({props})
   return (
    <div className='w-full block rounded-sm relative'>
     <div className='relative block w-full'>
@@ -20,7 +19,16 @@ const ProductDisplay = (props) => {
     </span>
     </div>
     
-    <p className = "text-white">{name}</p>
+    <p className = "text-white text-center p-2">{name}</p>
+    <div className = "text-white flex justify-between items-center mx-4">
+        <span className = "block relative text-xl">
+        {`$ ${price} `}  
+           <span className='text-sm'> {special_price} </span>
+
+           <span className='text-sm text-green'>{` ( ${usd_discounts} % off ) `}</span>
+        </span>
+         <BsBagCheckFill /> 
+    </div>
    </div>
   )
 }
